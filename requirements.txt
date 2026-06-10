@@ -1,0 +1,15 @@
+# Core
+streamlit>=1.35
+pandas>=2.0
+numpy>=1.24
+
+# Visualization
+plotly>=5.18
+
+# Spatial analysis
+geopandas>=0.14
+libpysal>=4.10
+esda>=2.6
+
+# Optional: parquet support
+pyarrow>=15.0
