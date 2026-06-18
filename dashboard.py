@@ -26,7 +26,7 @@ st.title("Generic Drug Analysis in Japan")
 def load_data():
 
     df = pd.read_csv(
-        "NDB_OpenData_Japan_Drug_Top100_15_23.csv"
+        "sample_data.csv"
     )
 
     return df
