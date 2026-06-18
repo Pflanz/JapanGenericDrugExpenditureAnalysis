@@ -60,10 +60,11 @@ https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000177182.html
 
 ```text
 .
-├── JGDEA.py
-├── data_sample.csv
+├── dashboard.py
+├── sample_data.csv
 ├── jp.json
 ├── requirements.txt
+├── LICENSE
 └── README.md
 ```
 
@@ -71,8 +72,8 @@ https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000177182.html
 
 | File                          | Description                  |
 | ----------------------------- | ---------------------------- |
-| JGDEA.py                      | Streamlit dashboard          |
-| data_sample.csv               | Sample of analytical dataset |
+| dashboard.py                  | Streamlit dashboard          | 
+| sample_data.csv               | Sample of analytical dataset |
 | jp.json                       | Prefecture boundary file     |
 | requirements.txt              | Python dependencies          |
 
@@ -107,11 +108,7 @@ streamlit run analyze7_en.py
 
 Generic expenditure share was calculated as:
 
-[
-\text{Generic Share}=
-\frac{\text{Generic Drug Expenditure}}
-{\text{Total Drug Expenditure}}
-]
+Generic Share=Generic Drug Expenditure/Total Drug Expenditure
 
 ### Global Spatial Autocorrelation
 
@@ -144,7 +141,7 @@ This framework can be used to:
 
 ## Limitations
 
-* NDB Open Data includes only the top 100 drugs by annual volume for each fiscal year.
+* NDB Open Data does not include all drugs by annual volume for each fiscal year.
 * Drug composition varies across fiscal years.
 * Analyses are based on aggregated administrative data rather than patient-level records.
 * Expenditure-based indicators were used; utilization measures such as DDDs were not included.
