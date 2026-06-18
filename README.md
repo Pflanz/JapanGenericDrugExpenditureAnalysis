@@ -34,25 +34,79 @@ https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000177182.html
 
 ### Time Trend Analysis
 
-* Annual expenditure shares of brand-name and generic drugs
-* Temporal trends by:
-
-  * Therapeutic category
-  * Healthcare setting
-  * Dosage form
-  * Geographic region
+* Annual expenditure shares of generic and brand-name drugs
+* Trends by therapeutic category
+* Trends by healthcare setting
+* Trends by dosage form
+* Trends by geographic region
 
 ### Regional Analysis
 
-* Comparison of generic expenditure shares among prefectures
+* Comparison among prefectures
 * Regional summaries across Japan
+* Prefecture-level tables
 
 ### Spatial Analysis
 
-* Choropleth maps of generic expenditure shares
+* Choropleth maps
 * Global Moran's I
 * Local Indicators of Spatial Association (LISA)
-* Identification of spatial clusters
+* Spatial cluster identification
+
+### Interactive Filtering
+
+Analyses can be customized by:
+
+* Fiscal year
+* Prefecture
+* Geographic region
+* Therapeutic category
+* Healthcare setting
+* Dosage form
+
+---
+
+## Dashboard Pages
+
+### Trend Analysis
+
+Explore temporal changes in generic expenditure shares and compare patterns across therapeutic categories, healthcare settings, dosage forms, and geographic regions.
+
+Outputs:
+
+* Line charts
+* Summary tables
+
+### Regional Analysis
+
+Evaluate regional variation in generic expenditure shares among prefectures and major regions of Japan.
+
+Outputs:
+
+* Regional trend plots
+* Prefecture-level summary tables
+
+### Spatial Analysis
+
+Investigate spatial patterns of generic drug expenditure.
+
+Outputs:
+
+* Choropleth maps
+* Global Moran's I statistics
+* LISA cluster maps
+
+Spatial clusters are classified following the GeoDa convention:
+
+* High–High
+* Low–Low
+* Low–High
+* High–Low
+* Island (excluded)
+
+### Dataset Explorer
+
+Inspect database structure and randomly sampled records.
 
 ---
 
@@ -70,12 +124,12 @@ https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000177182.html
 
 ### Main Files
 
-| File                          | Description                  |
-| ----------------------------- | ---------------------------- |
-| dashboard.py                  | Streamlit dashboard          | 
-| sample_data.csv               | Sample of analytical dataset |
-| jp.json                       | Prefecture boundary file     |
-| requirements.txt              | Python dependencies          |
+| File             | Description                      |
+| ---------------- | -------------------------------- |
+| dashboard.py     | Streamlit dashboard              |
+| sample_data.csv  | Sample dataset for demonstration |
+| jp.json          | Prefecture boundary file         |
+| requirements.txt | Python dependencies              |
 
 ---
 
@@ -85,7 +139,7 @@ Clone the repository:
 
 ```bash
 git clone https://github.com/Pflanz/JapanGenericDrugExpenditureAnalysis.git
-cd japan-generic-drug-analysis
+cd JapanGenericDrugExpenditureAnalysis
 ```
 
 Install dependencies:
@@ -97,34 +151,8 @@ pip install -r requirements.txt
 Run the dashboard:
 
 ```bash
-streamlit run analyze7_en.py
+streamlit run dashboard.py
 ```
-
----
-
-## Methodology
-
-### Generic Expenditure Share
-
-Generic expenditure share was calculated as:
-
-Generic Share=Generic Drug Expenditure/Total Drug Expenditure
-
-### Global Spatial Autocorrelation
-
-Spatial clustering was evaluated using Moran's I.
-
-Reference:
-
-Moran PA. Notes on Continuous Stochastic Phenomena. Biometrika. 1950.
-
-### Local Spatial Autocorrelation
-
-Local clustering was assessed using Local Indicators of Spatial Association (LISA).
-
-Reference:
-
-Anselin L. Local Indicators of Spatial Association—LISA. Geographical Analysis. 1995.
 
 ---
 
@@ -136,15 +164,17 @@ This framework can be used to:
 * Compare generic utilization across therapeutic categories
 * Evaluate regional disparities in pharmaceutical expenditure
 * Investigate spatial clustering of healthcare utilization patterns
+* Support pharmacoepidemiological and health services research
 
 ---
 
-## Limitations
+## Data Availability
 
-* NDB Open Data does not include all drugs by annual volume for each fiscal year.
-* Drug composition varies across fiscal years.
-* Analyses are based on aggregated administrative data rather than patient-level records.
-* Expenditure-based indicators were used; utilization measures such as DDDs were not included.
+The complete analytical dataset (2015–2023) is archived in Zenodo.
+
+DOI: 10.5281/zenodo.20657214
+
+A sample dataset containing 1,000 randomly selected records is provided in this repository for demonstration and testing purposes.
 
 ---
 
@@ -152,13 +182,15 @@ This framework can be used to:
 
 If you use this code or analytical framework, please cite:
 
-Author(s). Generic Drug Expenditure Analysis in Japan. GitHub repository.
+Fan D. Generic Drug Expenditure Analysis in Japan. GitHub repository.
 
 ---
 
-## Related Manuscript
+## Acknowledgements
 
-A manuscript based on this analytical framework is currently under review.
+This work is based on publicly available NDB Open Data released by the Ministry of Health, Labour and Welfare of Japan.
+
+The interpretations and conclusions presented in this repository are solely those of the author and do not represent the official views of the Ministry of Health, Labour and Welfare.
 
 ---
 
